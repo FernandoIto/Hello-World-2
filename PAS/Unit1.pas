@@ -81,7 +81,7 @@ begin
   Self.IBOQuery1.ParamByName('data_inicial').Value := cxDateEdit1.Date;
   Self.IBOQuery1.ParamByName('data_final').Value := cxDateEdit2.Date;
   Self.IBOQuery1.ParamByName('quitado').Value := Edit2.Text;
-  Self.IBOQuery1.Open; //By ITO
+  Self.IBOQuery1.Open; //By ITO --
 
   Self.cxButton4Click(nil);
 end;
