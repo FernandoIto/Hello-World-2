@@ -76,12 +76,12 @@ uses untFuncoes, DateUtils;
 
 procedure TForm1.cxButton1Click(Sender: TObject);
 begin
-  Self.IBOQuery1.Close;
+  Self.IBOQuery1.Close; 
   Self.IBOQuery1.ParamByName('BAIXADO').Value := Edit4.Text;
   Self.IBOQuery1.ParamByName('data_inicial').Value := cxDateEdit1.Date;
   Self.IBOQuery1.ParamByName('data_final').Value := cxDateEdit2.Date;
   Self.IBOQuery1.ParamByName('quitado').Value := Edit2.Text;
-  Self.IBOQuery1.Open;
+  Self.IBOQuery1.Open; //By ITO
 
   Self.cxButton4Click(nil);
 end;
@@ -90,7 +90,7 @@ procedure TForm1.cxButton2Click(Sender: TObject);
 begin
   IBExecSQL('UPDATE CONTAS_RECEBER SET CONTRATO_BAIXADO = ' + QuotedStr(Edit1.Text) + ' WHERE EMPRESA = 1 AND DOCUMENTO = '
           + QuotedStr(Self.IBOQuery1.FieldByName('VDOCUMENTO').AsString), IB_Connection1, nil);
-  //ShowMessage( Self.IBOQuery1.FieldByName('VDOCUMENTO').AsString );
+  
   Self.IBOQuery1.Refresh;
   Self.IBOQuery2.Refresh;
 end;
