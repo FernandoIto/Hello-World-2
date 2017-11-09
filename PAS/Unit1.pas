@@ -93,6 +93,7 @@ begin
   
   Self.IBOQuery1.Refresh;
   Self.IBOQuery2.Refresh;
+  ShowMessage('Check the changes here!');
 end;
 
 procedure TForm1.cxButton4Click(Sender: TObject);
